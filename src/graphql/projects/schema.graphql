@@ -1,0 +1,16 @@
+type Project {
+  ID: Int
+  Title: String
+  Client_ID: Int
+  clients: Client
+  costs: [Cost]
+}
+
+input ProjectWhere {
+  ID: Int
+}
+
+type Query {
+  getProject(where: ProjectWhere, limit: Int, offset: Int): Project
+  getProjects(where: ProjectWhere, limit: Int, offset: Int): [Project]
+}

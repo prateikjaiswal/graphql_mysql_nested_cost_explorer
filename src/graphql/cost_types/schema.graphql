@@ -1,0 +1,15 @@
+type CostType {
+  ID: Int
+  Name: String
+  costs: [Cost],
+  costType: CostType
+}
+
+input CostTypeWhere {
+  ID: Int
+}
+
+type Query {
+  getCostType(where: CostTypeWhere, limit: Int, offset: Int): CostType
+  getCostTypes(where: CostTypeWhere, limit: Int, offset: Int): [CostType]
+}

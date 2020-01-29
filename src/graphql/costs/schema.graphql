@@ -1,0 +1,17 @@
+type Cost {
+  ID: Int
+  Amount: Int
+  Cost_Type_ID: Int
+  Project_ID: Int
+  projects: Project
+  cost_types: CostType
+}
+
+input CostWhere {
+  ID: Int
+}
+
+type Query {
+  getCost(where: CostWhere, limit: Int, offset: Int): Cost
+  getCosts(where: CostWhere, limit: Int, offset: Int): [Cost]
+}

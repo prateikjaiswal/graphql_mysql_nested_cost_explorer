@@ -1,0 +1,14 @@
+type Client {
+  ID: Int
+  Name: String
+  projects: [Project]
+}
+
+input ClientWhere {
+  ID: Int
+}
+
+type Query {
+  getClient(where: ClientWhere, limit: Int, offset: Int): Client
+  getClients(where: ClientWhere, limit: Int, offset: Int): [Client]
+}
